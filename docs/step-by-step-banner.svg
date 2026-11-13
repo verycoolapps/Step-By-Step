@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="currentColor" opacity="0.6"/>
+    </marker>
+  </defs>
+  <rect width="960" height="220" fill="none"/>
+
+  <!-- pipeline nodes -->
+  <g font-size="13" text-anchor="middle">
+    <rect x="30" y="80" width="150" height="56" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
+    <text x="105" y="104" fill="currentColor">❓ HOW-DO-I?</text>
+    <text x="105" y="122" fill="currentColor" opacity="0.6" font-size="11">any domain</text>
+
+    <rect x="215" y="80" width="150" height="56" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
+    <text x="290" y="104" fill="currentColor">🎯 INTENT</text>
+    <text x="290" y="122" fill="currentColor" opacity="0.6" font-size="11">fix · build · learn</text>
+
+    <rect x="400" y="80" width="150" height="56" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
+    <text x="475" y="104" fill="currentColor">👤 LEVEL</text>
+    <text x="475" y="122" fill="currentColor" opacity="0.6" font-size="11">beginner → expert</text>
+
+    <rect x="585" y="80" width="150" height="56" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
+    <text x="660" y="104" fill="currentColor">🧩 DECOMPOSE</text>
+    <text x="660" y="122" fill="currentColor" opacity="0.6" font-size="11">goal → micro-steps</text>
+
+    <rect x="770" y="80" width="160" height="56" rx="10" fill="none" stroke="currentColor" stroke-opacity="0.5"/>
+    <text x="850" y="104" fill="currentColor">✅ VERIFIED</text>
+    <text x="850" y="122" fill="currentColor" opacity="0.6" font-size="11">checkpoints + fixes</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" fill="none">
+    <line x1="180" y1="108" x2="213" y2="108" marker-end="url(#arrow)"/>
+    <line x1="365" y1="108" x2="398" y2="108" marker-end="url(#arrow)"/>
+    <line x1="550" y1="108" x2="583" y2="108" marker-end="url(#arrow)"/>
+    <line x1="735" y1="108" x2="768" y2="108" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- detail ladder -->
+  <g font-size="11" text-anchor="middle" opacity="0.75">
+    <text x="60" y="180" fill="currentColor">L1 QUICK</text>
+    <text x="240" y="180" fill="currentColor">L2 STANDARD</text>
+    <text x="420" y="180" fill="currentColor">L3 DETAILED</text>
+    <text x="600" y="180" fill="currentColor">L4 EXTREME</text>
+    <text x="800" y="180" fill="currentColor">L5 MASTERCLASS</text>
+  </g>
+  <g stroke="currentColor" stroke-opacity="0.3" stroke-width="1">
+    <line x1="60" y1="188" x2="900" y2="188"/>
+    <rect x="52" y="176" width="16" height="24" fill="currentColor" opacity="0.25"/>
+    <rect x="232" y="172" width="16" height="32" fill="currentColor" opacity="0.35"/>
+    <rect x="412" y="166" width="16" height="44" fill="currentColor" opacity="0.5"/>
+    <rect x="592" y="158" width="16" height="60" fill="currentColor" opacity="0.7"/>
+    <rect x="792" y="148" width="16" height="80" fill="currentColor" opacity="0.9"/>
+  </g>
+
+  <text x="480" y="40" text-anchor="middle" font-size="16" fill="currentColor" font-weight="bold">STEP BY STEP</text>
+  <text x="480" y="60" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.6">from confusion → execution · one step at a time · no guesswork</text>
+</svg>

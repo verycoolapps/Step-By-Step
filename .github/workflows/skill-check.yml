@@ -1,0 +1,45 @@
+name: skill-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Syntax-check skill scripts
+        run: |
+          python -m py_compile step-by-step/scripts/*.py
+
+      - name: Lint example guide
+        run: |
+          python step-by-step/scripts/lint_guide.py \
+            step-by-step/references/examples/gold-standards.md --level 4 || true
+
+      - name: Validate evals.json schema basics
+        run: |
+          python - <<'PY'
+          import json, sys
+          d = json.load(open('step-by-step/evals/evals.json'))
+          assert d['skill_name'] == 'step-by-step'
+          assert len(d['should_trigger']) >= 8, 'need >=8 trigger prompts'
+          assert len(d['should_not_trigger']) >= 5, 'need >=5 near-misses'
+          assert len(d['behavior']) >= 2 and all(len(c['assertions']) >= 2 for c in d['behavior'])
+          assert len(d['adversarial']) >= 2
+          ids = [c['id'] for c in d['behavior'] + d['adversarial']]
+          assert len(ids) == len(set(ids)), 'duplicate case ids'
+          print('evals.json OK:', len(d['should_trigger']), 'trigger,',
+                len(d['should_not_trigger']), 'near-miss,',
+                len(d['behavior']), 'behavior,', len(d['adversarial']), 'adversarial')
+          PY
